@@ -5,6 +5,8 @@ const todos = require('../db/queries/todos');
 router.get('/todos', (req, res) => {
   todos.getAllTodos().then(data => {
     console.log(data);
+    res.setHeader("Content-Type", "application/json");
+    res.status(200);
     res.json(data);
   });
 });

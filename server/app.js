@@ -14,11 +14,12 @@ const app = express();
 app.use(morgan(ENVIROMENT));
 app.use(bodyParser.json());
 
+// Handles all of our todo routes
 app.use('/', todoRoutes);
 
-
+// landing page that returns welcome message
 app.get('/', (req, res) => {
   res.json({greetings: 'Welcome to Ethans To-do application'});
 });
 
-app.listen(PORT, () => console.log(`Server is listening on port: http://localhost${PORT}`));
+app.listen(PORT, () => console.log(`Server is listening on port: http://localhost:${PORT}`));
