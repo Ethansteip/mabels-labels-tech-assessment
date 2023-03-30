@@ -5,6 +5,6 @@ DROP TABLE IF EXISTS todos CASCADE;
 CREATE TABLE todos (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
-  comment VARCHAR(255),
-  status VARCHAR(255) NOT NULL --set default value to todo
+  comment TEXT,
+  status VARCHAR(50) NOT NULL
 );

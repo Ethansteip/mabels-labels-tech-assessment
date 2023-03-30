@@ -10,6 +10,13 @@ const getAllTodos = () => {
 
 // Crates an new To-Do item in datastore and returns the newly created record.
 const createNewTodo = (name, comment, status = 'todo') => {
+
+  const statusArray = ['todo', 'inprogress', 'complete'];
+
+  if (!statusArray.includes(status)) {
+    status = 'todo';
+  }
+
   return db.query('INSERT INTO todos (name, comment, status) VALUES ($1, $2, $3) RETURNING *;', [name, comment, status])
     .then(data => {
       return data.rows;
