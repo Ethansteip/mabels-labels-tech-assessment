@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const todos = require('../db/queries/todos');
+const auth = require('../middlewear/basicAuth');
 
 // Gets a list of all To-Dos
 router.get('/todos', (req, res) => {
@@ -11,7 +12,7 @@ router.get('/todos', (req, res) => {
 });
 
 // Create a new To-Do item
-router.post('/todo', (req, res) => {
+router.post('/todo', auth.isAuthorized, (req, res) => {
   const {name, comment , status} = req.body;
   todos.createNewTodo(name, comment, status).then(data => {
     res.setHeader("Content-Type", "application/json");
