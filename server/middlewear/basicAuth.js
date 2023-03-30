@@ -3,6 +3,8 @@
 * basicAuth - Verifies that the request contains an authorization header.
 *
 */
+const ErrorMessage = require('../errors/ErrorMessage.js');
+
 const isAuthorized = (req, res, next) => {
 
   const auth = req.headers.authorization;
@@ -11,7 +13,8 @@ const isAuthorized = (req, res, next) => {
     next();
   } else {
     res.status(403);
-    res.send('Access Forbidden');
+    const error = new ErrorMessage(403);
+    res.json(error);
   }
 };
 
