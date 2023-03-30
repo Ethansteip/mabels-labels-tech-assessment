@@ -1,13 +1,22 @@
 const router = require('express').Router();
 const todos = require('../db/queries/todos');
 
-// Returns an object of all todos.
+// Gets a list of all To-Dos
 router.get('/todos', (req, res) => {
   todos.getAllTodos().then(data => {
-    console.log(data);
     res.setHeader("Content-Type", "application/json");
     res.status(200);
     res.json(data);
+  });
+});
+
+// Create a new To-Do item
+router.post('/todo', (req, res) => {
+  const {name, comment , status} = req.body;
+  todos.createNewTodo(name, comment, status).then(data => {
+    res.setHeader("Content-Type", "application/json");
+    res.status(201);
+    res.json(data[0]);
   });
 });
 
