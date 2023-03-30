@@ -11,8 +11,8 @@ const getAllTodos = () => {
 // Crates an new To-Do item in datastore and returns the newly created record.
 const createNewTodo = (name, comment, status = 'todo') => {
 
+  // Allow only acceptable status values.
   const statusArray = ['todo', 'inprogress', 'complete'];
-
   if (!statusArray.includes(status)) {
     status = 'todo';
   }
