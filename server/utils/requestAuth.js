@@ -1,6 +1,6 @@
 /*
 *
-* requestAuth - helper functions to help direct the flow of requests to the todo api.
+* requestAuth - helper functions to help detect and raise errors.
 *
 */
 
@@ -8,7 +8,7 @@ const ErrorMessage = require('../errors/ErrorMessage.js');
 
 const checkForNameAndStatus = (req, res, name, status) => {
 
-  // Verifies that at least the name value is provided. Status will default to "todo" and comments can be null.
+  // Verifies that at least the name value is provided in the request. Status will default to "todo" and comments can be null.
   if (!name) {
     res.status(400);
     const error = new ErrorMessage(400);
