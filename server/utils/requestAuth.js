@@ -20,6 +20,7 @@ const checkForNameAndStatus = (req, res, name, status) => {
   const statusArray = ['todo', 'inprogress', 'complete'];
 
   if (!statusArray.includes(status)) {
+    res.status(400);
     const error = new ErrorMessage(400);
     res.json(error);
     return true;
