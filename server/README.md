@@ -6,6 +6,8 @@ I created a docker image for the project and will walk you through running the p
 
 Tools used on local environment: Docker - postgres, node, express, VS code, Postman
 
+I also made a video of me going through the below installation process - [installation walkthrough](https://www.loom.com/share/b19e98037757482e9caf6a2701ad0b37)
+
 ## Install
 
     git clone git@github.com:Ethansteip/mabels-labels-tech-assessment.git ethans-todo-api
