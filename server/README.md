@@ -74,7 +74,13 @@ ___________________________________
 `POST /todo`
 
 
-    // Requires request body containing at least the name property.
+    // Requires request body containing a json object with at least the name property.
+
+    {
+        "name": "Newest To-Do",
+        "comment": "comment",
+        "status": "inprogress"
+    }
 
     // Requires Basic HTTP authorization
     // username: 'admin'
