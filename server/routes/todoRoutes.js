@@ -1,3 +1,9 @@
+/*
+*
+* todoRoutes - handles all CRUD routing operations for To-Dos.
+*
+*/
+
 const router = require('express').Router();
 const todos = require('../db/queries/todos');
 const reqAuth = require('../utils/requestAuth');

@@ -1,3 +1,9 @@
+/*
+*
+* todos - handles all CRUD datastore queries for To-Dos.
+*
+*/
+
 // Require the database connection
 const db = require('../../configs/db.config');
 
@@ -17,21 +23,21 @@ const createNewTodo = (name, comment, status = 'todo') => {
     });
 };
 
-// Gets a specific To-Do item with id from datastore.
+// Get a specific To-Do item with id from datastore.
 const getTodoById = id => {
   return db.query('SELECT * FROM todos WHERE id = $1;', [id]).then(data => {
     return data.rows;
   });
 };
 
-// Updates a specific To-Do item with id from datastore.
+// Update a specific To-Do item with id from datastore.
 const updateTodoById = (name, comment, status = 'todo', id) => {
   return db.query('UPDATE todos SET name = $1, comment = $2, status = $3 WHERE id = $4 RETURNING *;', [name, comment, status, id]).then(data => {
     return data.rows;
   });
 };
 
-// Deletes a specific To-Do item with id from datastore.
+// Delete a specific To-Do item with id from datastore.
 const deleteTodoById = (id) => {
   return db.query('DELETE FROM todos WHERE id = $1 RETURNING *;', [id]).then(data => {
     return data.rows;

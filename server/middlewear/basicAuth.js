@@ -16,6 +16,7 @@ const isAuthorized = (req, res, next) => {
     res.json(error);
   }
 
+  // verify the credentials in the auth header, else return error.
   const authenticate = new Buffer.from(auth.split(' ')[1], 'base64').toString().split(':');
   const user = authenticate[0];
   const pass = authenticate[1];
