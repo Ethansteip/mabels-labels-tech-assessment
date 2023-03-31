@@ -59,10 +59,10 @@ ___________________________________
 
     [
       {
-        id: 1
-        name: "Take out the garbage", 
-        comment: null, 
-        status: "todo"
+        "id": 1
+        "name": "Take out the garbage", 
+        "comment": null, 
+        "status": "todo"
         },
        ...
     ]
@@ -89,10 +89,10 @@ ___________________________________
     // Returns the newly created To-Do
 
       {
-        id: 10
-        name: "My newest To-Do", 
-        comment: null, 
-        status: "todo"
+        "id": 10
+        "name": "My newest To-Do", 
+        "comment": null, 
+        "status": "todo"
       }
        
 
