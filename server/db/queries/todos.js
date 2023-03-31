@@ -24,4 +24,18 @@ const getTodoById = id => {
   });
 };
 
-module.exports = {getAllTodos, createNewTodo, getTodoById};
+// Updates a specific To-Do item with id from datastore.
+const updateTodoById = (name, comment, status = 'todo', id) => {
+  return db.query('UPDATE todos SET name = $1, comment = $2, status = $3 WHERE id = $4 RETURNING *;', [name, comment, status, id]).then(data => {
+    return data.rows;
+  });
+};
+
+// Deletes a specific To-Do item with id from datastore.
+const deleteTodoById = (id) => {
+  return db.query('DELETE FROM todos WHERE id = $1 RETURNING *;', [id]).then(data => {
+    return data.rows;
+  });
+};
+
+module.exports = {getAllTodos, createNewTodo, getTodoById, updateTodoById, deleteTodoById};
