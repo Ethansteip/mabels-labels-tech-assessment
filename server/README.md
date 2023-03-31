@@ -4,6 +4,8 @@ A simple JSON RESTful API Service for a To-Do List. Built with Node.js, Express 
 
 I created a docker image for the project and will walk you through running the project using Docker below.
 
+Tools used on local environment: Docker - postgres, node, express, VS code, Postman
+
 ## Install
 
     git clone git@github.com:Ethansteip/mabels-labels-tech-assessment.git ethans-todo-api
@@ -174,3 +176,6 @@ ___________________________________
       {
         "message": "To-Do with an id of 5 was deleted successfully!"
       }
+
+## notes
+when sending a request body, i've set things up to only accept To-Dos with a status of "todo", "inprogress", or "complete". Mispellings of the status will return a ClientError response - "The client provided bad data, causing an error.". If the status is left out of the request body, the app will default it to "todo".
