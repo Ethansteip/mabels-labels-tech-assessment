@@ -4,7 +4,7 @@ A simple JSON RESTful API Service for a To-Do List. Built with Node.js, Express 
 
 I created a docker image for the project and will walk you through running the project using Docker below.
 
-Tools used on local environment: Docker - postgres, node, express, VS code, Postman
+Tools used on local environment: Git, Docker - postgres, node, express, VS code, Postman
 
 I also made a video of me going through the below installation process - [installation walkthrough](https://www.loom.com/share/b19e98037757482e9caf6a2701ad0b37)
 
