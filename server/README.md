@@ -96,9 +96,9 @@ ___________________________________
 
       {
         "id": 10
-        "name": "My newest To-Do", 
-        "comment": null, 
-        "status": "todo"
+        "name": "Newest To-Do",
+        "comment": "comment",
+        "status": "inprogress"
       }
        
 
